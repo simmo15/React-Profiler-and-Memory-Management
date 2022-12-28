@@ -1,13 +1,13 @@
 import { useMemo } from 'react';
 import { filterTodos } from './utils.js'
 
-export default function TodoList({ todos, theme, tab }) {
+export default function TodoList({ todos,tab }) {
   const visibleTodos = useMemo(
     () => filterTodos(todos, tab),
     [todos, tab]
   );
   return (
-    <div className={theme}>
+    <div>
       <ul>
         {visibleTodos.map(todo => (
           <li key={todo.id}>
